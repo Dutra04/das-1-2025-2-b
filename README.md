@@ -1,4 +1,4 @@
-Arquitetura de Código - Engenharia de Software Moderna
+Livro base: Arquitetura de Código - Engenharia de Software Moderna
 
 1. A Finalidade do Desenvolvimento de Software
 A atividade de desenvolver um software tem como objetivo fundamental apresentar uma solução para um problema determinado. A computação aborda essa tarefa por meio de abstrações, que funcionam como modelos simplificados para representar as diversas partes envolvidas no problema.

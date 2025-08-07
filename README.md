@@ -1,5 +1,9 @@
 Livro base: Arquitetura de Código - Engenharia de Software Moderna / Capitulo 5.
 https://engsoftmoderna.info/cap5.html
+Código limpo de Robert Martin
+https://integrada.minhabiblioteca.com.br/reader/books/9788550816043/pageid/0
+Design Patterns de Erich Gamma
+https://integrada.minhabiblioteca.com.br/reader/books/9788577800469/pageid/0
 
 1. A Finalidade do Desenvolvimento de Software
 A atividade de desenvolver um software tem como objetivo fundamental apresentar uma solução para um problema determinado. A computação aborda essa tarefa por meio de abstrações, que funcionam como modelos simplificados para representar as diversas partes envolvidas no problema.
@@ -30,4 +34,19 @@ Quando a classe 'A usa acesso via arquivo ou banco da classe 'B
 se uma classe depende de muitas outras classes ela esta assumindo
 responsabilidades demais tornando não "coesas".
 
-7. 
+7. Solid
+Desenvolvido por Robert Martin mesmo autor de clean code. O SOLID é um conjunto de principios da programação orientada a objetos(POO) 
+    5 principios:
+S Responsabilidade única
+Uma aplicação direta da ideia de coesão.
+Propoe que toda classe deve ter apenas um motivo para mudar, ou seja, deve ser responsável por uma única tarefa ou funcionalidade dentro do sistema
+
+O Segregação de Interfaces
+Caso particular de Responsabilidade Única com foco em interfaces.
+ O princípio define que interfaces têm que ser pequenas, coesas e  específicas para cada tipo de cliente issso para evitar que clientes dependam de interfaces com métodos que eles não vão usar, em outras palavras, interfaces grandes e abrangentes devem ser divididas em interfaces menores e mais específicas, focadas em funcionalidades relacionadas.
+
+L Inversão de Dependências
+
+I
+D
+

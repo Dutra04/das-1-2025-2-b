@@ -36,17 +36,42 @@ responsabilidades demais tornando não "coesas".
 
 7. Solid
 Desenvolvido por Robert Martin mesmo autor de clean code. O SOLID é um conjunto de principios da programação orientada a objetos(POO) 
-    5 principios:
-S Responsabilidade única
+   # 5 principios:
+- S Responsabilidade única
 Uma aplicação direta da ideia de coesão.
-Propoe que toda classe deve ter apenas um motivo para mudar, ou seja, deve ser responsável por uma única tarefa ou funcionalidade dentro do sistema
+Propoe que toda classe deve ter apenas um motivo para mudar, ou seja, deve ser responsável por uma única tarefa ou funcionalidade dentro do sistema para que tenha um bom desempenho.
 
-O Segregação de Interfaces
+- O Segregação de Interfaces
 Caso particular de Responsabilidade Única com foco em interfaces.
  O princípio define que interfaces têm que ser pequenas, coesas e  específicas para cada tipo de cliente issso para evitar que clientes dependam de interfaces com métodos que eles não vão usar, em outras palavras, interfaces grandes e abrangentes devem ser divididas em interfaces menores e mais específicas, focadas em funcionalidades relacionadas.
 
-L Inversão de Dependências
+- L Inversão de Dependências
+Modulos de alto nivel nao devem depender da modulos de nivel baixo, ambos devem depender de abstraçoes/(interface)
+O principio recomenda que uma classe deve estabelecer dependencias prioritariamente com abstraçoes e nao com implementaçoes concretas pois abstraçoes(Interfaces) sao mais estaveis do que implementaçoes concretas(Classe)
 
-I
-D
+- I Prefira composiçao a herança
+Herança expoe para subclasses detalhes de implemntaçao das classes Pai, logo frequentemente diz que herança viola o encapsulamento das classes pai.
+- - - As subclasse tende a ser uma divisao exata para virar uma herança
+Imagine uma modelagem pessoa tendo como sub-divisao, cliente e funcionario em herança a pessoa
+
+  Cliente <--| *Pessoa* |--> Funcionario
+
+Isso nao nos da uma divisao exata, e torna que o Funcionario nao pode ser Cliente, portanto esta impedindo que o funcionario compre na empresa em questao
+
+- D Demeter
+Um grupo chamado DEMETER desenvolvia pesquisas na area de modularizaçao de software na Norteastern University Boston, em uma de suas pesquisas, o grupo enunciou um conjunto de regras para evitar problemas de encapsulamento em projeto de sistemas orientados a objetos.
+Em outras palavras o principio Demeter recomenda que os metodos de uma classe devem falar apenas com os metodos da propria classe,
+Todo metodo no objeto deve invocar apenas:
+
+- Sua propria classe
+- Objetos passados como parametros
+- Objetos criados pelo proprio Metodo
+- Atributos da classe do metodo
+
+8. Principio Aberto/Fechado.
+Uma classe deve estar fechada para modificaçao mas aberta para extençoes.
+Pois uma classe nao deve permitir alteraçao sem controle de um codigo, mas deve ser permitido trabalhar em novas realizaçoes dentro dele.
+
+
+ Em resumo, o Princípio Aberto/Fechado tem como objetivo a construção de classes flexíveis e extensíveis, capazes de se adaptarem a diversos cenários de uso, sem modificações no seu código fonte.
 

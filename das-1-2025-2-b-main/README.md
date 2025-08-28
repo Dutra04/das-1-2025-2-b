@@ -25,34 +25,34 @@ Grau de inter-dependência entre módulos de software, um baixo acoplamento é d
 
 Conexao entre duas classes tendo dois tipos
 
-# Acoplamento Bom
+- Acoplamento Bom
 Quando classe 'A usa apenas metodos publicos da classe 'B
 Basicamente pense em um USB onde voce tira de um computador e coloca em outro, bem simples e baixo acoplamento.
 
-# Acoplamento Ruim
+- Acoplamento Ruim
 Quando a classe 'A usa acesso via arquivo ou banco da classe 'B
 se uma classe depende de muitas outras classes ela esta assumindo
 responsabilidades demais tornando não "coesas".
 
 7. Solid
 Desenvolvido por Robert Martin mesmo autor de clean code. O SOLID é um conjunto de principios da programação orientada a objetos(POO) 
-   # 5 principios:
-- S Responsabilidade única
-Uma aplicação direta da ideia de coesão.
-Propoe que toda classe deve ter apenas um motivo para mudar, ou seja, deve ser responsável por uma única tarefa ou funcionalidade dentro do sistema para que tenha um bom desempenho.
+  - 5 principios:
+    - S Responsabilidade única
+  Uma aplicação direta da ideia de coesão.
+  Propoe que toda classe deve ter apenas um motivo para mudar, ou seja, deve ser responsável por uma única tarefa ou funcionalidade dentro do sistema para que tenha um bom desempenho.
 
-- O Segregação de Interfaces
-Caso particular de Responsabilidade Única com foco em interfaces.
- O princípio define que interfaces têm que ser pequenas, coesas e  específicas para cada tipo de cliente issso para evitar que clientes dependam de interfaces com métodos que eles não vão usar, em outras palavras, interfaces grandes e abrangentes devem ser divididas em interfaces menores e mais específicas, focadas em funcionalidades relacionadas.
+    - O Segregação de Interfaces
+  Caso particular de Responsabilidade Única com foco em interfaces.
+  O princípio define que interfaces têm que ser pequenas, coesas e  específicas para cada tipo de cliente issso para evitar que clientes dependam de interfaces com métodos que eles não vão usar, em outras palavras, interfaces grandes e abrangentes devem ser divididas em interfaces menores e mais específicas, focadas em funcionalidades relacionadas.
 
-- L Inversão de Dependências
-Modulos de alto nivel nao devem depender da modulos de nivel baixo, ambos devem depender de abstraçoes/(interface)
-O principio recomenda que uma classe deve estabelecer dependencias prioritariamente com abstraçoes e nao com implementaçoes concretas pois abstraçoes(Interfaces) sao mais estaveis do que implementaçoes concretas(Classe)
+    - L Inversão de Dependências
+  Modulos de alto nivel nao devem depender da modulos de nivel baixo, ambos devem depender de abstraçoes/(interface)
+  O principio recomenda que uma classe deve estabelecer dependencias prioritariamente com abstraçoes e nao com implementaçoes concretas pois abstraçoes(Interfaces) sao mais estaveis do que implementaçoes concretas(Classe)
 
-- I Prefira composiçao a herança
-Herança expoe para subclasses detalhes de implemntaçao das classes Pai, logo frequentemente diz que herança viola o encapsulamento das classes pai.
-- - - As subclasse tende a ser uma divisao exata para virar uma herança
-Imagine uma modelagem pessoa tendo como sub-divisao, cliente e funcionario em herança a pessoa
+    - I Prefira composiçao a herança
+  Herança expoe para subclasses detalhes de implemntaçao das classes Pai, logo frequentemente diz que herança viola o encapsulamento das classes pai.
+  - - - As subclasse tende a ser uma divisao exata para virar uma herança
+  Imagine uma modelagem pessoa tendo como sub-divisao, cliente e funcionario em herança a pessoa
 
   Cliente <--| *Pessoa* |--> Funcionario
 
@@ -75,3 +75,25 @@ Pois uma classe nao deve permitir alteraçao sem controle de um codigo, mas deve
 
  Em resumo, o Princípio Aberto/Fechado tem como objetivo a construção de classes flexíveis e extensíveis, capazes de se adaptarem a diversos cenários de uso, sem modificações no seu código fonte.
 
+
+
+# Fundamentos da arquitetura de software: uma abordagem de engenharia
+  - Richards, Mark, Ford, Neal
+  
+  Link do livro com biblioteca universidade
+https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/2[%3Bvnd.vst.idref%3Dcover]!/4/2/2%4051:1
+
+Definições da estrutura de software:
+
+- Caracteristicas
+- Decisoes de arquitetura
+- Principios de design
+
+1. Caracteristicas.
+As características definem os critérios que indicam se um sistema é bem-sucedido, e geralmente são independentes das funções que ele realiza. É importante destacar que essas características não exigem entendimento das funcionalidades do sistema, embora sejam essenciais para seu funcionamento adequado. Elas têm tanta importância que dedicamos vários capítulos deste livro para explorá-las e explicá-las detalhadamente.
+
+2. Decisões de arquitetura.
+As decisões arquiteturais estabelecem as regras para construir um sistema. Por exemplo, um arquiteto pode decidir que, em uma arquitetura em camadas, somente as camadas de negócios e serviços tenham acesso ao banco de dados evitando que a camada de apresentação faça chamadas diretas ao banco. Essas decisões criam os limites do sistema e ajudam as equipes de desenvolvimento a entender o que podem ou não fazer durante o desenvolvimento.
+
+3. Principios de design.
+Um elemento tambem importante para definir a arquitetura são os princípios de design. Diferente das decisões arquiteturais, que são regras fixas, um princípio de design funciona como uma orientação geral. Por exemplo, o princípio sugere que as equipes devem usar comunicação assíncrona entre serviços em uma arquitetura de microsserviços para melhorar o desempenho. Como uma decisão rígida não consegue cobrir todas as situações e formas de comunicação, esse princípio serve para indicar a abordagem preferida, mas ainda deixa espaço para o desenvolvedor escolher o protocolo mais adequado.

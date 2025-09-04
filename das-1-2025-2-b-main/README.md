@@ -169,3 +169,14 @@ essas sao as funçoes da equipe DevOps.
 Algumas empresas tratam isso como uma cultura, exigindo que os desenvolvedores saibam 
 trabalhar em conjunto para a vida do sistemas, enquanto outras empresas tratam isso como um cargo tem apenas uma 
 equipe especialista DevOps nao como uma politica/Filosofia.
+
+# Atividade 04/09
+
+- Resuma a diferençca entre: Arquitetura e Design
+
+A principal diferença entre Arquitetura e design é que a arquitetura esta mais relacionada no que o sistema deve fazer e como deve ser construido, um pouco mais parecido como Requisitos não funcionais. Elas tambem criam limites tecnicos que garantem, organização, segurança e coerencia no desnvolvimento. Ja o design são mais sobre orientações gerais, que idicam boas praticas a serem seguidas,porem com flexibilidade. Não regras rigidas e sim sugestões que auxiliam o desenvolvedor nas tomadas de decisão
+
+- Como é a formação do conhecimento de um arquiteto modelo T?
+
+O conhecimento de um arquiteto modelo T é formado por uma mistura de amplitude e profundidade técnica. Isso quer dizer que ele tem uma visão ampla sobre várias tecnologias, ferramentas, padrões e soluções, mesmo que não seja especialista em todas elas. Essa variedade de conhecimentos ajuda o arquiteto a entender diferentes caminhos possíveis e a escolher a melhor solução para cada problema, levando em conta os prós e contras e o contexto específico do negócio.
+

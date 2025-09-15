@@ -30,7 +30,7 @@ public class Publisher {
         
         senderClient.sendMessage(
             new ServiceBusMessage(
-                "jorge: eu nao acredito"));
+                "jorge: eu acredito"));
         
     }
 }

@@ -180,3 +180,22 @@ A principal diferença entre Arquitetura e design é que a arquitetura esta mais
 
 O conhecimento de um arquiteto modelo T é formado por uma mistura de amplitude e profundidade técnica. Isso quer dizer que ele tem uma visão ampla sobre várias tecnologias, ferramentas, padrões e soluções, mesmo que não seja especialista em todas elas. Essa variedade de conhecimentos ajuda o arquiteto a entender diferentes caminhos possíveis e a escolher a melhor solução para cada problema, levando em conta os prós e contras e o contexto específico do negócio.
 
+# Assunto de Prova
+Trade-offs(Compensação)
+Nao existe resposta certa nem errada na arquitetura apenas trade-off
+
+De forma extremamente resumida
+Topico 1paraN
+Imagine enviar mensagem para todos seus familiares para o almoço de domingo o quao demorado seria enviar mensagem para uma pessoa de cada vez, agora imagine um grupo de familia onde você apenas repassa a mensagem por la na vez de enviar individualmente para cada pessoa, assm funciona o broker onde uma pessoa se inscreve para receber notificaçoes  (Subscribers)
+porem se o topico nao conseguir entregar a mensagem ela nao sera mais entregue.
+
+
+Falando agora sobre Filas 1para1
+O metodo é um pouco parecido mas nao muito, na vez de voce enviar a mensagem para todos ao mesmo tempo voce previsa enviar individualmente sendp o publisher.
+Já os subscribers viram pooling e na vez de se inscrever eles precisam buscar as mensagens, o lado bom é que diferente do topico voce pode recuperar mensagens.
+
+
+Vantagens
+o serviço que envia mensagens nescessita apenas de uma conexao com o topico ja filas ha nescessidade de varias filas, no caso 1para cada isso para novos subs.
+Maior acoplamento, na fila ha como enviar diferentes informações, para cada receivers diferente do topico onde o publischer envia a mesma mensagem para os seus inscritos.
+

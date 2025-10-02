@@ -1,201 +1,189 @@
-Livro base: Arquitetura de Código - Engenharia de Software Moderna / Capitulo 5.
-https://engsoftmoderna.info/cap5.html
-Código limpo de Robert Martin
-https://integrada.minhabiblioteca.com.br/reader/books/9788550816043/pageid/0
-Design Patterns de Erich Gamma
-https://integrada.minhabiblioteca.com.br/reader/books/9788577800469/pageid/0
+# Livros base:
 
-1. A Finalidade do Desenvolvimento de Software
-A atividade de desenvolver um software tem como objetivo fundamental apresentar uma solução para um problema 
-determinado. A computação aborda essa tarefa por meio de abstrações, que funcionam como modelos simplificados para 
-representar as diversas partes envolvidas no problema.
-
-2. Abstração
-Abstração pode ser definida como o processo de criar uma representação simplificada de algo real. Na prática, 
-trata-se de traduzir conceitos, objetos e papéis do mundo real para uma estrutura lógica que o sistema 
-computacional possa processar, sempre de acordo com as necessidades e os requisitos definidos para o software.
-
-3. Complexidade
-A complexidade é um dos principais desafios ao se trabalhar com abstrações. A programação orientada a objetos, por 
-exemplo, é uma abordagem que busca lidar com essa questão ao dividir as funcionalidades de um sistema em 
-componentes menores e com responsabilidades claras. Essa separação facilita a localização de trechos específicos do 
-código e simplifica a sua manutenção ao longo do tempo.
-
-4. Getters e setters
-Basicamente: ocultaçao de dados, são muito usados em linguagens orientadas a objetos, como Java e C++. A 
-recomendação para uso desses métodos é a seguinte: todos os dados de uma classe devem ser privados e o acesso a 
-eles apenas por getters "acesso por leitura e setters "acesso por escrita
-
-5. Coesão
-A classe deve implementar apenas uma função, para seu bom entendimento e manutenção 'toda classe deve ter apenas 
-uma única responsabilidade no sistema.
-
-6. Acoplamento
-Grau de inter-dependência entre módulos de software, um baixo acoplamento é desejável pois indica que os módulos 
-são independentes e suas mudanças têm pouco impacto uns sobre os outros. Isso facilita a manutenção e a evolução do 
-software.
-
-Conexao entre duas classes tendo dois tipos
-
-- Acoplamento Bom
-Quando classe 'A usa apenas metodos publicos da classe 'B
-Basicamente pense em um USB onde voce tira de um computador e coloca em outro, bem simples e baixo acoplamento.
-
-- Acoplamento Ruim
-Quando a classe 'A usa acesso via arquivo ou banco da classe 'B
-se uma classe depende de muitas outras classes ela esta assumindo
-responsabilidades demais tornando não "coesas".
-
-7. Solid
-Desenvolvido por Robert Martin mesmo autor de clean code. O SOLID é um conjunto de principios da programação 
-orientada a objetos(POO) 
-  - 5 principios:
-    - S Responsabilidade única
-  Uma aplicação direta da ideia de coesão.
-  Propoe que toda classe deve ter apenas um motivo para mudar, ou seja, deve ser responsável por uma única tarefa 
-  ou funcionalidade dentro do sistema para que tenha um bom desempenho.
-
-    - O Segregação de Interfaces
-  Caso particular de Responsabilidade Única com foco em interfaces.
-  O princípio define que interfaces têm que ser pequenas, coesas e  específicas para cada tipo de cliente issso 
-  para evitar que clientes dependam de interfaces com métodos que eles não vão usar, em outras palavras, interfaces 
-  grandes e abrangentes devem ser divididas em interfaces menores e mais específicas, focadas em funcionalidades 
-  relacionadas.
-
-    - L Inversão de Dependências
-  Modulos de alto nivel nao devem depender da modulos de nivel baixo, ambos devem depender de abstraçoes/(interface)
-  O principio recomenda que uma classe deve estabelecer dependencias prioritariamente com abstraçoes e nao com 
-  implementaçoes concretas pois abstraçoes(Interfaces) sao mais estaveis do que implementaçoes concretas(Classe)
-
-    - I Prefira composiçao a herança
-  Herança expoe para subclasses detalhes de implemntaçao das classes Pai, logo frequentemente diz que herança viola 
-  o encapsulamento das classes pai.
-  - - - As subclasse tende a ser uma divisao exata para virar uma herança
-  Imagine uma modelagem pessoa tendo como sub-divisao, cliente e funcionario em herança a pessoa
-
-  Cliente <--| *Pessoa* |--> Funcionario
-
-Isso nao nos da uma divisao exata, e torna que o Funcionario nao pode ser Cliente, portanto esta impedindo que o 
-funcionario compre na empresa em questao
-
-- D Demeter
-Um grupo chamado DEMETER desenvolvia pesquisas na area de modularizaçao de software na Norteastern University 
-Boston, em uma de suas pesquisas, o grupo enunciou um conjunto de regras para evitar problemas de encapsulamento em 
-projeto de sistemas orientados a objetos.
-Em outras palavras o principio Demeter recomenda que os metodos de uma classe devem falar apenas com os metodos da 
-propria classe,
-Todo metodo no objeto deve invocar apenas:
-
-- Sua propria classe
-- Objetos passados como parametros
-- Objetos criados pelo proprio Metodo
-- Atributos da classe do metodo
-
-8. Principio Aberto/Fechado.
-Uma classe deve estar fechada para modificaçao mas aberta para extençoes.
-Pois uma classe nao deve permitir alteraçao sem controle de um codigo, mas deve ser permitido trabalhar em novas r
-ealizaçoes dentro dele.
+* Arquitetura de Código – Engenharia de Software Moderna – Capítulo 5
+  [https://engsoftmoderna.info/cap5.html](https://engsoftmoderna.info/cap5.html)
+* Código Limpo – Robert Martin
+  [https://integrada.minhabiblioteca.com.br/reader/books/9788550816043/pageid/0](https://integrada.minhabiblioteca.com.br/reader/books/9788550816043/pageid/0)
+* Design Patterns – Erich Gamma
+  [https://integrada.minhabiblioteca.com.br/reader/books/9788577800469/pageid/0](https://integrada.minhabiblioteca.com.br/reader/books/9788577800469/pageid/0)
 
 
- Em resumo, o Princípio Aberto/Fechado tem como objetivo a construção de classes flexíveis e extensíveis, capazes 
- de se adaptarem a diversos cenários de uso, sem modificações no seu código fonte.
+# 1. A Finalidade do Desenvolvimento de Software
+
+A atividade de desenvolver um software tem como objetivo fundamental apresentar uma solução para um problema específico. A computação aborda essa tarefa por meio de abstrações, que funcionam como modelos simplificados para representar as diversas partes envolvidas no problema.
 
 
 
-# Fundamentos da arquitetura de software: uma abordagem de engenharia
-  - Richards, Mark, Ford, Neal
-  
-  Link do livro com biblioteca universidade
-https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/epubcfi/6/2[%3Bvnd.vst.idref%3Dcover]!/4/2/
-2%4051:1
+# 2. Abstração
 
-Definições da estrutura de software:
+Abstração é o processo de criar uma representação simplificada de algo real. Na prática, trata-se de traduzir conceitos, objetos e papéis do mundo real para uma estrutura lógica que o sistema computacional possa processar, sempre de acordo com os requisitos e as necessidades definidas para o software.
 
-- Caracteristicas
-- Decisoes de arquitetura
-- Principios de design
 
-1. Caracteristicas.
-As características definem os critérios que indicam se um sistema é bem-sucedido, e geralmente são independentes 
-das funções que ele realiza. É importante destacar que essas características não exigem entendimento das 
-funcionalidades do sistema, embora sejam essenciais para seu funcionamento adequado. Elas têm tanta importância que 
-dedicamos vários capítulos deste livro para explorá-las e explicá-las detalhadamente.
+# 3. Complexidade
 
-2. Decisões de arquitetura.
-As decisões arquiteturais estabelecem as regras para construir um sistema. Por exemplo, um arquiteto pode decidir 
-que, em uma arquitetura em camadas, somente as camadas de negócios e serviços tenham acesso ao banco de dados 
-evitando que a camada de apresentação faça chamadas diretas ao banco. Essas decisões criam os limites do sistema e 
-ajudam as equipes de desenvolvimento a entender o que podem ou não fazer durante o desenvolvimento.
+A complexidade é um dos principais desafios ao se trabalhar com abstrações. A programação orientada a objetos (POO), por exemplo, busca lidar com essa questão ao dividir o sistema em componentes menores, com responsabilidades bem definidas. Essa separação facilita a leitura, o entendimento, a manutenção e a evolução do código ao longo do tempo.
 
-3. Principios de design.
-Diferente das decisões arquiteturais, que são regras fixas, um princípio de design funciona como uma orientação 
-geral. Por exemplo, o princípio sugere que as equipes devem usar comunicação assíncrona entre serviços em uma 
-arquitetura de microsserviços para melhorar o desempenho. Como uma decisão rígida não consegue cobrir todas as 
-situações e formas de comunicação, esse princípio serve para indicar a abordagem preferida, mas ainda deixa espaço 
-para o desenvolvedor escolher o protocolo mais adequado.
 
-# Expectativas de um arquiteto
+# 4. Getters e Setters
 
-1. Tomadas de decisão na arquitetura.
-Orientação, essa palavra resume muito bem, quando o arquiteto deve ser a pessoa com maior experiencia, sabendo 
-escutar sua equipe e orientar.
+São mecanismos de ocultação de dados, muito comuns em linguagens orientadas a objetos como Java e C++. A boa prática recomenda que todos os atributos de uma classe sejam privados, e que o acesso a eles ocorra apenas por meio de getters (leitura) e setters (escrita). Isso melhora o encapsulamento e o controle sobre os dados internos da classe.
 
-2. Analisar continuamente a arquitetura.
-Na tecnologia temos muita evoluções em basicamente todos os lados, o trabalho do arquiteto deve verificar o codigo 
-continuamente e saber sobre as novas atualizações do mercado, isso para nao deixar seu codigo atrasado comparado 
-aos demais e evitar erros com features novas em codigos.
 
-3. Manter-se atualizado com as ultimas tendencias.
-Muito ligado com a analise continua, o arquiteto nao deve parar de estudar, pois nas areas de tecnologia ha uma 
-evoluçao constante em todos os aspectos, portanto o arquiteto deve nao saber 110% de tudo mas saber o basico bem 
-feito da maioria.
+# 5. Coesão
 
-4. Assegurar a conformidade com as decisões.
-Basicamente o guia da equipe, quando a duvidas por exemplo do desenvolvedor ele devera tirar as duvidas mostrando o 
-melhor caminho, por isso o arquiteto deve ter uma noção sendo um gestor.
+Uma classe deve ser responsável por apenas uma função no sistema. Isso facilita seu entendimento, testes e manutenção. Em outras palavras, toda classe deve ter uma única responsabilidade, o que torna seu propósito mais claro e seu código mais limpo.
 
-5. Dominio de negocio.
-Um arquiteto nao é um profissional somente tecnico, tambem tem que ter um bom conhecimento em humanas, ele deve 
-saber se comunicar com a equipe, saber como a empresa funciona como sua equipe trabalha e saber entender a 
-nescessidade do cliente.
+
+# 6. Acoplamento
+
+É o grau de interdependência entre módulos de software. Um baixo acoplamento é desejável, pois indica que os módulos são independentes e que mudanças em um deles têm pouco impacto nos demais. Isso contribui para a escalabilidade e a flexibilidade do sistema.
+
+# Conexão entre duas classes pode ter dois tipos de acoplamento:
+
+# Acoplamento Bom
+
+Quando a classe A usa apenas métodos públicos da classe B.
+Exemplo: pense em um USB, que pode ser facilmente removido de um computador e conectado a outro — simples, reutilizável e com baixo acoplamento.
+
+# Acoplamento Ruim
+
+Quando a classe A acessa diretamente arquivos, banco de dados ou dados internos da classe B.
+Se uma classe depende de muitas outras ou conhece detalhes demais sobre elas, isso indica baixa coesão e um acoplamento excessivo, tornando o sistema frágil a mudanças.
+
+
+# 7. SOLID
+
+Criado por Robert Martin (autor de Clean Code), o SOLID é um conjunto de princípios da programação orientada a objetos. São eles:
+
+# S - Responsabilidade Única (SRP)
+
+Cada classe deve ter apenas um motivo para mudar, ou seja, deve ser responsável por uma única tarefa ou funcionalidade.
+
+# O - Segregação de Interfaces (ISP)
+
+As interfaces devem ser pequenas e específicas, de forma que os clientes não sejam obrigados a depender de métodos que não utilizam.
+
+# L - Inversão de Dependência (DIP)
+
+Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações (interfaces).
+
+Abstrações são mais estáveis e facilitam a reutilização e a manutenção.
+
+# I - Prefira Composição a Herança
+
+A herança expõe detalhes da implementação da classe-pai para as subclasses, o que pode violar o encapsulamento.
+
+Nem sempre herança representa corretamente a realidade do modelo.
+Exemplo: se temos uma classe Pessoa, e subclasses Cliente e Funcionário, estamos impedindo que um funcionário seja também um cliente, o que pode limitar a flexibilidade do sistema.
+
+### D - Princípio de Demeter
+
+Desenvolvido por um grupo da Northeastern University em Boston.
+O princípio recomenda que os métodos de uma classe devem interagir apenas com:
+
+* A própria classe
+* Objetos recebidos como parâmetro
+* Objetos criados pelo próprio método
+* Atributos da própria classe
+
+Isso reduz o acoplamento e melhora o encapsulamento.
+
+# 8. Princípio Aberto/Fechado (Open/Closed Principle)
+
+Uma classe deve estar fechada para modificação, mas aberta para extensão.
+Isso significa que não se deve modificar diretamente o código existente ao implementar novas funcionalidades, mas sim estendê-lo por meio de herança ou composição.
+Em resumo, esse princípio torna o sistema mais flexível, estável e seguro contra regressões.
+
+
+# Fundamentos da Arquitetura de Software
+
+Livro: Richards, Mark; Ford, Neal
+[https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/](https://integrada.minhabiblioteca.com.br/reader/books/9788550819754/)
+
+# 1. Características
+
+São critérios que indicam se um sistema é bem-sucedido, geralmente independentes das funcionalidades.
+Exemplo: desempenho, segurança, escalabilidade, manutenibilidade etc.
+Elas não precisam de entendimento profundo da lógica do sistema, mas são essenciais para seu bom funcionamento.
+
+# 2. Decisões de Arquitetura
+
+São regras técnicas que definem como o sistema será construído.
+Exemplo: em uma arquitetura em camadas, somente as camadas de negócio e serviço podem acessar diretamente o banco de dados, evitando que a camada de apresentação o faça.
+
+# 3. Princípios de Design
+
+São orientações gerais (e não regras fixas).
+Exemplo: "prefira comunicação assíncrona entre serviços", o que melhora o desempenho em arquiteturas de microsserviços.
+São sugestões que guiam o desenvolvedor, mantendo flexibilidade nas decisões.
+
+
+# Expectativas de um Arquiteto
+
+# 1. Tomar decisões de arquitetura
+
+O arquiteto deve ter experiência e visão ampla, ser acessível à equipe e saber ouvir e orientar.
+
+# 2. Analisar continuamente a arquitetura
+
+Com a constante evolução tecnológica, o arquiteto deve estar sempre avaliando a arquitetura do sistema e se atualizando com novas tendências e práticas.
+
+# 3. Manter-se atualizado
+
+O arquiteto deve estar em constante aprendizado.
+Não é necessário saber tudo, mas ter conhecimento prático e sólido das principais ferramentas e tecnologias.
+
+# 4. Garantir conformidade com as decisões
+
+Ele atua como guia técnico da equipe, esclarecendo dúvidas e garantindo que o time siga os padrões definidos.
+
+# 5. Domínio de negócio
+
+O arquiteto não é apenas técnico — ele precisa entender o contexto da empresa, a equipe, o cliente e o mercado. Saber se comunicar e traduzir necessidades de negócio para soluções técnicas é essencial.
 
 # DevOps
-Desde os primordios do desenvolvimento havia duas equipes Front e Back-end, elas cuidavam da parte 'Bonita' do
-software (Front) com a integraçao de codigos as paginas misturado com design atrativo e funcional e a parte Back 
-end que cuida da parte de tras de um software fazendo toda a logica do sistemas, havia muitas discussoes e 
-discordancias dessas equipes, Isso se extende ate hoje porem surgiu um cargo novo, DevOps é um conjunto de praticas 
-que unem as duas equipes, Planejar, Codar, Publicar, implementar, operar e manter a evoluçao/atualização continua, 
-essas sao as funçoes da equipe DevOps.
-Algumas empresas tratam isso como uma cultura, exigindo que os desenvolvedores saibam 
-trabalhar em conjunto para a vida do sistemas, enquanto outras empresas tratam isso como um cargo tem apenas uma 
-equipe especialista DevOps nao como uma politica/Filosofia.
+
+No início, as equipes eram divididas entre Front-end (interface e experiência do usuário) e Back-end (lógica de negócio e dados). Isso gerava conflitos e falta de integração.
+O movimento DevOps surgiu como um conjunto de práticas para unir as equipes de desenvolvimento e operações.
+Inclui etapas como: planejar, codar, testar, publicar, operar e manter sistemas de forma colaborativa e contínua.
+Algumas empresas tratam DevOps como cultura, exigindo colaboração entre os times.
+Outras tratam como um cargo específico, com uma equipe dedicada.
+
 
 # Atividade 04/09
 
-- Resuma a diferençca entre: Arquitetura e Design
+# Resuma a diferença entre Arquitetura e Design
 
-A principal diferença entre Arquitetura e design é que a arquitetura esta mais relacionada no que o sistema deve fazer e como deve ser construido, um pouco mais parecido como Requisitos não funcionais. Elas tambem criam limites tecnicos que garantem, organização, segurança e coerencia no desnvolvimento. Ja o design são mais sobre orientações gerais, que idicam boas praticas a serem seguidas,porem com flexibilidade. Não regras rigidas e sim sugestões que auxiliam o desenvolvedor nas tomadas de decisão
+A principal diferença é que arquitetura define o que o sistema deve fazer e como será estruturado, lidando com requisitos não funcionais (como segurança e desempenho).
+Já o design orienta boas práticas para resolver problemas específicos no código, com mais flexibilidade.
+Arquitetura define os limites técnicos; design propõe as melhores abordagens dentro desses limites.
 
-- Como é a formação do conhecimento de um arquiteto modelo T?
+# Como é a formação do conhecimento de um arquiteto modelo T?
 
-O conhecimento de um arquiteto modelo T é formado por uma mistura de amplitude e profundidade técnica. Isso quer dizer que ele tem uma visão ampla sobre várias tecnologias, ferramentas, padrões e soluções, mesmo que não seja especialista em todas elas. Essa variedade de conhecimentos ajuda o arquiteto a entender diferentes caminhos possíveis e a escolher a melhor solução para cada problema, levando em conta os prós e contras e o contexto específico do negócio.
-
-# Assunto de Prova
-Trade-offs(Compensação)
-Nao existe resposta certa nem errada na arquitetura apenas trade-off
-
-De forma extremamente resumida
-Topico 1paraN
-Imagine enviar mensagem para todos seus familiares para o almoço de domingo o quao demorado seria enviar mensagem para uma pessoa de cada vez, agora imagine um grupo de familia onde você apenas repassa a mensagem por la na vez de enviar individualmente para cada pessoa, assm funciona o broker onde uma pessoa se inscreve para receber notificaçoes  (Subscribers)
-porem se o topico nao conseguir entregar a mensagem ela nao sera mais entregue.
+O arquiteto modelo T tem amplo conhecimento em várias tecnologias (a parte horizontal do T), e profundo conhecimento em uma ou mais áreas específicas (a parte vertical).
+Isso permite que ele entenda o panorama geral, mas também resolva problemas complexos em áreas críticas.
 
 
-Falando agora sobre Filas 1para1
-O metodo é um pouco parecido mas nao muito, na vez de voce enviar a mensagem para todos ao mesmo tempo voce previsa enviar individualmente sendp o publisher.
-Já os subscribers viram pooling e na vez de se inscrever eles precisam buscar as mensagens, o lado bom é que diferente do topico voce pode recuperar mensagens.
+# Assunto de Prova – Trade-offs (Compensações)
+
+Na arquitetura de software, não existem respostas certas ou erradas, apenas compensações (trade-offs) entre prós e contras.
 
 
-Vantagens
-o serviço que envia mensagens nescessita apenas de uma conexao com o topico ja filas ha nescessidade de varias filas, no caso 1para cada isso para novos subs.
-Maior acoplamento, na fila ha como enviar diferentes informações, para cada receivers diferente do topico onde o publischer envia a mesma mensagem para os seus inscritos.
+
+# 1 para N – Tópico (Publisher/Subscriber)
+
+Imagine enviar mensagem para todos os seus familiares sobre o almoço de domingo. Enviar uma a uma seria demorado. Criar um grupo e enviar uma única mensagem é mais eficiente.
+Assim funciona o tópico com assinantes (subscribers). O problema é que se a mensagem falhar, ela pode ser perdida.
+
+
+# 1 para 1 – Filas (Queues)
+
+Já nas filas, cada mensagem é enviada individualmente.
+O subscriber precisa buscar (polling) a mensagem. A vantagem é que as mensagens podem ser recuperadas mesmo se houver falhas.
+
+
+# Vantagens Comparativas
+
+* Tópico: comunicação mais rápida, apenas uma conexão com o broker.
+* Fila: maior controle e confiabilidade, porém requer várias filas e conexões para múltiplos consumidores.
 

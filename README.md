@@ -199,11 +199,6 @@ passamos para sistema Aberto, neste estado, o Circuit Breaker bloqueia imediatam
 Já nosso sistema meio-aberto o Circuit Breaker permite um número limitado de requisições para o sistema B, se uma requisição for bem-sucedida o Circuit Breaker considera que o sistema B está funcionando normalmente, o seu estado volta para Fechado, e o contador de erros é resetado, já se a requisição falhar, o sistema volta para estado aberto e reinicia o processo,
 
 # Atividades 06/10
-
-* Definição das Características da Arquitetura.
-
-Quando uma empresa cria um software, ela define o que o sistema deve fazer. Mas o arquiteto de software precisa pensar em mais do que só a função principal do sistema — ele  considera as características da arquitetura, elas nao dizem o que o sistema faz, mas como ele deve se comportar para ser confiável, seguro, rápido, etc. Também influenciam diretamente na estrutura do projeto e são essenciais para o sucesso do software. exemplos: segurança, desempenho, escalabilidade, disponibilidade, etc. elas sao chamadas assim porque nao fazem parte da função principal(fora do dominio)
-
 * Características Operacionais da Arquitetura
 
 As características operacionais da arquitetura são qualidades essenciais que garantem que o sistema funcione, elas definem como o software deve se comportar diante de desafios, como falhas, aumento da demanda ou situações de desastre, esas caracteristicas influencias diretamente o design e infraestutura do sistema, por exemplo, alta disponibilidade ou rápida recuperação após uma falha exige escolhas específicas de arquitetura. Por isso, arquitetos precisam pensar nelas desde o começo para evitar problemas futuros.
@@ -217,3 +212,10 @@ Os arquitetos de software também precisam se preocupar com a estrutura do códi
 * Características Transversais da Arquitetura
 
 Os arquitetos de software tambem precisam cuidar de como o codigo é organizado e da qualidade interna do sistema para que seja de facil comprensao e de partes que se encaixem, para facilitar melhorias futuras, essas caracteristicas ajudam o sistema a ser flexivel  e facil de configurar
+
+# Atividades 09/10
+
+* Definição das Características da Arquitetura.
+
+Quando uma empresa cria um software, ela define o que o sistema deve fazer. Mas o arquiteto de software precisa pensar em mais do que só a função principal do sistema — ele  considera as características da arquitetura, elas nao dizem o que o sistema faz, mas como ele deve se comportar para ser confiável, seguro, rápido, etc. Também influenciam diretamente na estrutura do projeto e são essenciais para o sucesso do software. exemplos: segurança, desempenho, escalabilidade, disponibilidade, etc. elas sao chamadas assim porque nao fazem parte da função principal(fora do dominio)
+

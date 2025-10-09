@@ -187,3 +187,29 @@ O subscriber precisa buscar (polling) a mensagem. A vantagem é que as mensagens
 * Tópico: comunicação mais rápida, apenas uma conexão com o broker.
 * Fila: maior controle e confiabilidade, porém requer várias filas e conexões para múltiplos consumidores.
 
+# Tipos de Características da Arquitetura
+
+* Características Operacionais:
+Relacionadas à execução e comportamento do sistema em produção. Exemplos. Disponibilidade. Desempenho. Escalabilidade. Recuperabilidade. Confiabilidade - Segurança. Robustez.
+
+* Interagem diretamente com áreas como DevOps e infraestrutura:
+Características Estruturais. Relacionadas à forma como o sistema é organizado internamente. Modularidade. Manutenibilidade. Portabilidade. Extensibilidade. Reutilização. Atualização.
+
+* Envolvem qualidade interna do código e facilidade de evolução do sistema:
+Características Transversais. Restrições e capacidades que afetam múltiplas áreas do sistema. Acessibilidade. Autenticação - Autorização. Privacidade. Legalidade regulações, compliance. Usabilidade. Armazenamento de dados. Frequentemente envolvem requisitos legais, de segurança ou de experiência do usuário.
+
+* Importância dos Trade-offs:
+Arquitetura exige equilíbrio, melhorar uma característica segurança pode prejudicar outra desempenho. Assim como pilotar um helicóptero, alterar um controle afeta os outros. Portanto, o papel do arquiteto é fazer compensações inteligentes, visando sempre a arquitetura menos pior, e não a ideal.
+
+* Iteratividade e Evolução:
+Não é necessário acertar a arquitetura perfeita desde o início, Arquiteturas iterativas, que permitem mudanças ao longo do tempo, são mais sustentáveis. Isso está alinhado com os princípios do desenvolvimento ágil,A arquitetura de software não é apenas sobre funcionalidade. É uma prática estratégica que envolve decisões estruturais e operacionais críticas, levando em conta limitações, objetivos de negócio e contexto técnico. Os arquitetos precisam, Identificar e priorizar as características mais importantes. Navegar pelos trade-offs, Manter a arquitetura flexível e evolutiva, Criar uma linguagem comum com a equipe para evitar ambiguidades.
+
+# Circuit Breaker
+Circuit Breaker Pattern
+Estados: Fechado, Aberto e meio-aberto
+
+Sistema A chama sistema B = Sistema fechado. OK
+Contador de erros, se uma requisição é bem sucedida tude certo, se não conseguir contactar, erro= +1 até o proximo acerto, o numero maximo de erros é pre definido, quando iguala/ultrapassa
+passamos para sistema Aberto, neste estado, o Circuit Breaker bloqueia imediatamente todas as chamadas para o sistema B.N
+
+Já nosso sistema meio-aberto o Circuit Breaker permite um número limitado de requisições para o sistema B, se uma requisição for bem-sucedida o Circuit Breaker considera que o sistema B está funcionando normalmente, o seu estado volta para Fechado, e o contador de erros é resetado, já se a requisição falhar, o sistema volta para estado aberto e reinicia o processo,

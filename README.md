@@ -1,11 +1,11 @@
 # Livros base:
 
 * Arquitetura de Código – Engenharia de Software Moderna – Capítulo 5
-  [https://engsoftmoderna.info/cap5.html](https://engsoftmoderna.info/cap5.html)
+  [https://engsoftmoderna.info/cap5.html]
 * Código Limpo – Robert Martin
-  [https://integrada.minhabiblioteca.com.br/reader/books/9788550816043/pageid/0](https://integrada.minhabiblioteca.com.br/reader/books/9788550816043/pageid/0)
+  [https://integrada.minhabiblioteca.com.br/reader/books/9788550816043/pageid/0]
 * Design Patterns – Erich Gamma
-  [https://integrada.minhabiblioteca.com.br/reader/books/9788577800469/pageid/0](https://integrada.minhabiblioteca.com.br/reader/books/9788577800469/pageid/0)
+  [https://integrada.minhabiblioteca.com.br/reader/books/9788577800469/pageid/0]
 
 
 # 1. A Finalidade do Desenvolvimento de Software
@@ -193,7 +193,7 @@ Circuit Breaker Pattern
 Estados: Fechado, Aberto e meio-aberto
 
 Sistema A chama sistema B = Sistema fechado. OK
-Contador de erros, se uma requisição é bem sucedida tude certo, se não conseguir contactar, erro= +1 até o proximo acerto, o numero maximo de erros é pre definido, quando iguala/ultrapassa
+Contador de erros, se uma requisição é bem sucedida tudo certo, se não conseguir contactar, erro= +1 até o proximo acerto, o numero maximo de erros é pre definido, quando iguala/ultrapassa
 passamos para sistema Aberto, neste estado, o Circuit Breaker bloqueia imediatamente todas as chamadas para o sistema B.N
 
 Já nosso sistema meio-aberto o Circuit Breaker permite um número limitado de requisições para o sistema B, se uma requisição for bem-sucedida o Circuit Breaker considera que o sistema B está funcionando normalmente, o seu estado volta para Fechado, e o contador de erros é resetado, já se a requisição falhar, o sistema volta para estado aberto e reinicia o processo,
@@ -218,4 +218,41 @@ Os arquitetos de software tambem precisam cuidar de como o codigo é organizado 
 * Definição das Características da Arquitetura.
 
 Quando uma empresa cria um software, ela define o que o sistema deve fazer. Mas o arquiteto de software precisa pensar em mais do que só a função principal do sistema — ele  considera as características da arquitetura, elas nao dizem o que o sistema faz, mas como ele deve se comportar para ser confiável, seguro, rápido, etc. Também influenciam diretamente na estrutura do projeto e são essenciais para o sucesso do software. exemplos: segurança, desempenho, escalabilidade, disponibilidade, etc. elas sao chamadas assim porque nao fazem parte da função principal(fora do dominio)
+
+# Aula 13/10/25
+
+Design Pattern: CQRS (Command Query Responsibility Segregation)
+Basicamente, consiste em otimizar a aplicação para que se conecte em dois bancos de dados, ao invés de apenas 1. O ponto central é, justamente, termos um banco voltado para operações de escrita e outro apenas para leitura. Essa política auxilia no load balance, performance e também na segurança geral do ambiente, de certa forma. Já que, caso haja problemas em um dos bancos, existe uma cópia em outro servidor para que seja utilizada enquanto a primeira é recuperada. O trade-off dessa arquitetura é, principalmente, o custo envolvido, já que os gastos com recursos para o banco de dados são duplicados.
+
+Padrões Arquiteturais
+A Grande Bola de Lama
+* Basicamente é uma confusão de código mal estruturado, desleixado e unido com fita adesiva e arame.
+É um projeto que foi construído totalmente de modo orgânico, com reparos pontuais, sem padronização e organização.
+
+
+Arquitetura Unitária
+* Um software que é executado em um único servidor (computador).
+Gravação de software em CD para instalação local nas máquinas que seriam responsáveis por executar os programas.
+
+Arquitetura Cliente/Servidor
+* Exite um servidor e diversos clientes. Todas as operações nos clientes são validadas no servidor.
+Arquitetura Desktop + servidor de banco de dados (database centric)
+* Existe um servidor central que hospeda o banco e uma instalação específica em cada máquina de usuário final. Lógica está no banco.
+Arquitetura Navegador + servidor web
+* A diferença para a arquitetura anterior é que existe um servidor web que é acessado por todas as máquinas finais e que, por sua vez, acessava o banco.
+Lógica está no servidor web.
+
+# Aula 16/10
+
+* retry
+Quando um aplicativo tenta se comunicar com um serviço e dá erro, ele pode lidar com isso de três jeitos:
+
+- Cancel.
+Se o erro não é temporário (ou seja, não vai adiantar tentar de novo), o melhor é cancelar a operação e mostrar um erro.
+
+- Retry immediately.
+Se o erro foi algo raro, como um problema rápido na rede, deve tentar denovo imediatamente.
+
+- retry after delay.
+Se o problema for algo comum, como a rede instável ou o serviço estar muito ocupado, o melhor é esperar um pouco e tentar de novo.
 

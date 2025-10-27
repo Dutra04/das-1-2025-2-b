@@ -256,3 +256,21 @@ Se o erro foi algo raro, como um problema rápido na rede, deve tentar denovo im
 - retry after delay.
 Se o problema for algo comum, como a rede instável ou o serviço estar muito ocupado, o melhor é esperar um pouco e tentar de novo.
 
+### Falta Resumo ###
+
+# Aula 27/10
+* PIPELINE
+  - de forma resumida "PIPE" seria um 'tubo'/conector usado para transferencia de dados de um componente para outro, já os filter, são componentes independentes que processam esses dados, cada flitro executa uma transformação especifica. 
+
+  Existem quatro tipos de filtros nesse estilo de arquitetura:
+  - Produtor
+  O ponto de partida de um processo, de saída apenas, às vezes chamado de origem.
+
+  - Transformador
+  Aceita a entrada, realiza opcionalmente uma transformação em algum ou todos os dados, então encaminha para o canal de saída. Os defensores funcionais reconhecerão esse recurso como mapa.
+
+  - Verificador
+  Aceita a entrada, testa um ou mais critérios, então produz opcionalmente uma saída, com base no teste. Os programadores funcionais reconhecerão isso como semelhante à redução.
+
+  - Consumidor
+  O ponto de término para o fluxo do pipeline. Por vezes os consumidores persistem o resultado final do processo de pipeline para um banco de dados ou podem exibir os resultados finais em uma tela IU.

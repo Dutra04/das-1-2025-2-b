@@ -219,3 +219,20 @@ Os arquitetos de software tambem precisam cuidar de como o codigo é organizado 
 
 Quando uma empresa cria um software, ela define o que o sistema deve fazer. Mas o arquiteto de software precisa pensar em mais do que só a função principal do sistema — ele  considera as características da arquitetura, elas nao dizem o que o sistema faz, mas como ele deve se comportar para ser confiável, seguro, rápido, etc. Também influenciam diretamente na estrutura do projeto e são essenciais para o sucesso do software. exemplos: segurança, desempenho, escalabilidade, disponibilidade, etc. elas sao chamadas assim porque nao fazem parte da função principal(fora do dominio)
 
+# Aula 03/11
+  # Arquitetura MircroKernel
+A arquitetura Microkernel é uma estrutura monolitica, consiste en dois componentes sendo um sistema central e  componentes de plug-in. A logica é dividida entre componentes de plug-in independentes e o sistema central basico.
+
+  - Sistema Central
+O sistema central é definido como a funcionalidade minima requirida para rodar o sistema. O IDE Eclipse é um bom exemplo, mesmo se tratando de um  de um editor de texto basico, é depois de acrescentar plug-ins que o  eclipse começa a se tornar um produto útil. Basicamente o sistema central cuida apenas do fluxo principal da aplicação, com pouca ou nenhuma lógica específica. Já os plug-ins contêm as regras e funcionalidades personalizadas. Isso deixa o núcleo mais simples, fácil de manter e de testar.
+
+Por exemplo, em um sistema que avalia dispositivos eletrônicos para reciclagem, cada tipo de aparelho pode ter seu próprio plug-in com regras específicas. Assim, para incluir um novo dispositivo, basta criar um novo plug-in, sem alterar o sistema principal.
+
+  - Os plug-ins
+  Os plug-ins, são módulos independentes que se comunicam com o sistema central, geralmente por chamadas diretas de métodos. Eles podem ser adicionados ou removidos em tempo de execução, usando ferramentas próprias, ou durante a compilação, exigindo nova implantação do sistema.
+
+Também é possível que os plug-ins funcionem como serviços externos acessados por REST ou mensagens, o que traz mais flexibilidade, mas aumenta a complexidade e o custo.
+
+Os plug-ins normalmente não acessam diretamente o banco de dados principal. Quem faz isso é o sistema central, que envia e recebe as informações necessárias. Cada plug-in pode, no entanto, ter seu próprio pequeno banco de dados separado.
+
+O sistema central usa um registro (registry) para saber quais plug-ins existem e como acessá-los. A comunicação entre o núcleo e os plug-ins segue contratos padronizados, definidos em interfaces que indicam quais métodos e dados devem ser usados.

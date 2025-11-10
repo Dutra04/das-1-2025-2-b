@@ -219,3 +219,78 @@ Os arquitetos de software tambem precisam cuidar de como o codigo é organizado 
 
 Quando uma empresa cria um software, ela define o que o sistema deve fazer. Mas o arquiteto de software precisa pensar em mais do que só a função principal do sistema — ele  considera as características da arquitetura, elas nao dizem o que o sistema faz, mas como ele deve se comportar para ser confiável, seguro, rápido, etc. Também influenciam diretamente na estrutura do projeto e são essenciais para o sucesso do software. exemplos: segurança, desempenho, escalabilidade, disponibilidade, etc. elas sao chamadas assim porque nao fazem parte da função principal(fora do dominio)
 
+<<<<<<< HEAD
+# Aula 03/11
+  # Arquitetura MircroKernel
+A arquitetura Microkernel é uma estrutura monolitica, consiste en dois componentes sendo um sistema central e  componentes de plug-in. A logica é dividida entre componentes de plug-in independentes e o sistema central basico.
+
+  - Sistema Central
+O sistema central é definido como a funcionalidade minima requirida para rodar o sistema. O IDE Eclipse é um bom exemplo, mesmo se tratando de um  de um editor de texto basico, é depois de acrescentar plug-ins que o  eclipse começa a se tornar um produto útil. Basicamente o sistema central cuida apenas do fluxo principal da aplicação, com pouca ou nenhuma lógica específica. Já os plug-ins contêm as regras e funcionalidades personalizadas. Isso deixa o núcleo mais simples, fácil de manter e de testar.
+
+Por exemplo, em um sistema que avalia dispositivos eletrônicos para reciclagem, cada tipo de aparelho pode ter seu próprio plug-in com regras específicas. Assim, para incluir um novo dispositivo, basta criar um novo plug-in, sem alterar o sistema principal.
+
+  - Os plug-ins
+  Os plug-ins, são módulos independentes que se comunicam com o sistema central, geralmente por chamadas diretas de métodos. Eles podem ser adicionados ou removidos em tempo de execução, usando ferramentas próprias, ou durante a compilação, exigindo nova implantação do sistema.
+
+Também é possível que os plug-ins funcionem como serviços externos acessados por REST ou mensagens, o que traz mais flexibilidade, mas aumenta a complexidade e o custo.
+
+Os plug-ins normalmente não acessam diretamente o banco de dados principal. Quem faz isso é o sistema central, que envia e recebe as informações necessárias. Cada plug-in pode, no entanto, ter seu próprio pequeno banco de dados separado.
+
+O sistema central usa um registro (registry) para saber quais plug-ins existem e como acessá-los. A comunicação entre o núcleo e os plug-ins segue contratos padronizados, definidos em interfaces que indicam quais métodos e dados devem ser usados.
+=======
+# Aula 13/10/25
+
+Design Pattern: CQRS (Command Query Responsibility Segregation)
+Basicamente, consiste em otimizar a aplicação para que se conecte em dois bancos de dados, ao invés de apenas 1. O ponto central é, justamente, termos um banco voltado para operações de escrita e outro apenas para leitura. Essa política auxilia no load balance, performance e também na segurança geral do ambiente, de certa forma. Já que, caso haja problemas em um dos bancos, existe uma cópia em outro servidor para que seja utilizada enquanto a primeira é recuperada. O trade-off dessa arquitetura é, principalmente, o custo envolvido, já que os gastos com recursos para o banco de dados são duplicados.
+
+Padrões Arquiteturais
+A Grande Bola de Lama
+* Basicamente é uma confusão de código mal estruturado, desleixado e unido com fita adesiva e arame.
+É um projeto que foi construído totalmente de modo orgânico, com reparos pontuais, sem padronização e organização.
+
+
+Arquitetura Unitária
+* Um software que é executado em um único servidor (computador).
+Gravação de software em CD para instalação local nas máquinas que seriam responsáveis por executar os programas.
+
+Arquitetura Cliente/Servidor
+* Exite um servidor e diversos clientes. Todas as operações nos clientes são validadas no servidor.
+Arquitetura Desktop + servidor de banco de dados (database centric)
+* Existe um servidor central que hospeda o banco e uma instalação específica em cada máquina de usuário final. Lógica está no banco.
+Arquitetura Navegador + servidor web
+* A diferença para a arquitetura anterior é que existe um servidor web que é acessado por todas as máquinas finais e que, por sua vez, acessava o banco.
+Lógica está no servidor web.
+
+# Aula 16/10
+
+* retry
+Quando um aplicativo tenta se comunicar com um serviço e dá erro, ele pode lidar com isso de três jeitos:
+
+- Cancel.
+Se o erro não é temporário (ou seja, não vai adiantar tentar de novo), o melhor é cancelar a operação e mostrar um erro.
+
+- Retry immediately.
+Se o erro foi algo raro, como um problema rápido na rede, deve tentar denovo imediatamente.
+
+- retry after delay.
+Se o problema for algo comum, como a rede instável ou o serviço estar muito ocupado, o melhor é esperar um pouco e tentar de novo.
+
+### Falta Resumo ###
+
+# Aula 27/10
+* PIPELINE
+  - de forma resumida "PIPE" seria um 'tubo'/conector usado para transferencia de dados de um componente para outro, já os filter, são componentes independentes que processam esses dados, cada flitro executa uma transformação especifica. 
+
+  Existem quatro tipos de filtros nesse estilo de arquitetura:
+  - Produtor
+  O ponto de partida de um processo, de saída apenas, às vezes chamado de origem.
+
+  - Transformador
+  Aceita a entrada, realiza opcionalmente uma transformação em algum ou todos os dados, então encaminha para o canal de saída. Os defensores funcionais reconhecerão esse recurso como mapa.
+
+  - Verificador
+  Aceita a entrada, testa um ou mais critérios, então produz opcionalmente uma saída, com base no teste. Os programadores funcionais reconhecerão isso como semelhante à redução.
+
+  - Consumidor
+  O ponto de término para o fluxo do pipeline. Por vezes os consumidores persistem o resultado final do processo de pipeline para um banco de dados ou podem exibir os resultados finais em uma tela IU.
+>>>>>>> 18e5a7420f495c131effdab6b69c03b8d595b9a8

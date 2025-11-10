@@ -257,7 +257,7 @@ Se o erro foi algo raro, como um problema rápido na rede, deve tentar denovo im
 - retry after delay.
 Se o problema for algo comum, como a rede instável ou o serviço estar muito ocupado, o melhor é esperar um pouco e tentar de novo.
 
-### Falta Resumo ###
+### Falta Resumo Dia 20/10 ###
 
 # Aula 27/10
 * PIPELINE
@@ -294,3 +294,18 @@ Também é possível que os plug-ins funcionem como serviços externos acessados
 Os plug-ins normalmente não acessam diretamente o banco de dados principal. Quem faz isso é o sistema central, que envia e recebe as informações necessárias. Cada plug-in pode, no entanto, ter seu próprio pequeno banco de dados separado.
 
 O sistema central usa um registro (registry) para saber quais plug-ins existem e como acessá-los. A comunicação entre o núcleo e os plug-ins segue contratos padronizados, definidos em interfaces que indicam quais métodos e dados devem ser usados.
+
+# Aula 10/11
+## Estilo de arquitetura Microsserviços
+
+A arquitetura de microsserviços é um modo moderno de criar sistemas de software dividindo-os em várias partes pequenas e independentes, chamadas de serviços. Cada serviço tem uma função específica e opera de forma autonoma.
+
+Essa ideia foi popularizado por Martin Fowler e James Lewis em 2014, e foi inspirada no Domain Driven Design (DDD) — que busca organizar o sistema em torno de áreas de negócio bem definidas, o foco é o desacoplamento, ou seja, fazer com que cada parte dependa o mínimo possível das outras.
+
+Nos microsserviços, cada serviço roda separadamente em contêineres, o que traz flexibilidade, escalabilidade e facilidade de manutenção. Se um serviço falha, os outros continuam funcionando. Por outro lado, a comunicação entre eles é feita pela rede, o que pode causar lentidão e complexidade.
+
+Outro ponto importante é que cada serviço deve ter controle sobre seus próprios dados, evitando bancos de dados compartilhados. Isso aumenta a independência, mas exige mais cuidado na integração das informações.
+
+Há também a camada de API, que conecta os serviços aos usuários ou a outros sistemas, e o uso de malhas de serviço e sidecars — componentes que cuidam de tarefas comuns, como segurança e monitoramento, sem acoplar os serviços entre si.
+
+Os serviços podem se comunicar de modo síncrono (esperando respostas imediatas) ou assíncrono (por eventos e mensagens).

@@ -309,3 +309,12 @@ Outro ponto importante é que cada serviço deve ter controle sobre seus própri
 Há também a camada de API, que conecta os serviços aos usuários ou a outros sistemas, e o uso de malhas de serviço e sidecars — componentes que cuidam de tarefas comuns, como segurança e monitoramento, sem acoplar os serviços entre si.
 
 Os serviços podem se comunicar de modo síncrono (esperando respostas imediatas) ou assíncrono (por eventos e mensagens).
+
+
+######  ######  ######  ######  ######
+######                          ######
+######  ######  ######  ######  ######
+#  FALTA AULA MICRO-KERNEL [CODIGO]  #
+######  ######  ######  ######  ######
+######                          ######
+######  ######  ######  ######  ######

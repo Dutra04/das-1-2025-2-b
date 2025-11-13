@@ -1,4 +1,4 @@
-package b.univille.app_a;
+package br.univille.app_a;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

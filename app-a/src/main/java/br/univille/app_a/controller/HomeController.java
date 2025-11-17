@@ -15,12 +15,13 @@ public class HomeController {
 
     @GetMapping("/startASync")
     public ResponseEntity startASync(){
-
+        System.out.println("App A Start");
         try(DaprClient client = new DaprClientBuilder().build()){
             var mensagem = "Hello from App A";
             client.invokeMethod("app-b", "/api/v1/startBSync",
-                mensagem,HttpExtension.POST);
+                mensagem,HttpExtension.POST).block();
         } catch (Exception e) {
+            e.printStackTrace();
         }
 
         return ResponseEntity.ok().build();

@@ -257,7 +257,19 @@ Se o erro foi algo raro, como um problema rápido na rede, deve tentar denovo im
 - retry after delay.
 Se o problema for algo comum, como a rede instável ou o serviço estar muito ocupado, o melhor é esperar um pouco e tentar de novo.
 
-### Falta Resumo Dia 20/10 ###
+# Resumo Dia 20/10
+
+* Arquitetura em camada.
+
+A arquitetura em camadas é um dos estilos mais comuns no desenvolvimento de software e muitas vezes é chamada de arquitetura natural. Isso acontece porque, quando não existe um planejamento inicial e a equipe simplesmente começa a programar, é bem provável que o resultado final siga esse modelo. Nesse tipo de arquitetura, os componentes são organizados em diferentes camadas horizontais, cada uma com uma função específica dentro do sistema. Geralmente existem quatro camadas principais: a camada de apresentação, que cuida da interface com o usuário e da comunicação com o navegador; a camada de negócio, que executa as regras comerciais ligadas à requisição; a camada de persistência, responsável por lidar com o acesso aos dados; e a camada de banco de dados, onde as informações ficam armazenadas. Esse estilo utiliza bastante o conceito de separação de responsabilidades, pois cada camada realiza somente suas próprias tarefas e não precisa conhecer as funções das outras.
+
+* Camadas de isolamento.
+
+As camadas desse modelo podem ser abertas ou fechadas. Em uma arquitetura fechada, uma requisição que começa na camada de apresentação precisa obrigatoriamente passar pela camada de negócio e depois pela de persistência antes de chegar ao banco de dados. Esse isolamento entre as camadas garante que mudanças em uma não afetem diretamente as outras, mantendo os contratos bem definidos. Se a camada de apresentação pudesse acessar diretamente a persistência, qualquer alteração feita lá impactaria todo o restante, criando um sistema muito acoplado e difícil de manter, o que o tornaria frágil e caro de modificar.
+
+* Adicionando camadas.
+
+Quando o isolamento entre as camadas é quebrado, como no caso de a apresentação acessar a persistência diretamente, o sistema acaba ficando cheio de dependências internas. Isso aumenta a complexidade, dificulta alterações e eleva o custo de manutenção, deixando a aplicação menos flexível e mais propensa a problemas.
 
 # Aula 27/10
 * PIPELINE
@@ -309,12 +321,3 @@ Outro ponto importante é que cada serviço deve ter controle sobre seus própri
 Há também a camada de API, que conecta os serviços aos usuários ou a outros sistemas, e o uso de malhas de serviço e sidecars — componentes que cuidam de tarefas comuns, como segurança e monitoramento, sem acoplar os serviços entre si.
 
 Os serviços podem se comunicar de modo síncrono (esperando respostas imediatas) ou assíncrono (por eventos e mensagens).
-
-
-######  ######  ######  ######  ######
-######                          ######
-######  ######  ######  ######  ######
-#  FALTA AULA MICRO-KERNEL [CODIGO]  #
-######  ######  ######  ######  ######
-######                          ######
-######  ######  ######  ######  ######
